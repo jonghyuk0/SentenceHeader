@@ -11,16 +11,16 @@ private:
 public:
 
     ///기본 생성자
-    explicit sentence() : sentence_contents(nullptr), sentence_length(0), memory_capacity(0) {}
+    sentence() : sentence_contents(nullptr), sentence_length(0), memory_capacity(0) {}
 
     ///문자로 생성
-    explicit sentence(const char chr) : sentence_length(1), memory_capacity(1) {
+    sentence(const char chr) : sentence_length(1), memory_capacity(1) {
         this->sentence_contents = new char[1];
         this->sentence_contents[0] = chr;
     }
 
     ///문자열로 생성
-    explicit sentence(const char *str) : sentence_length(get_len(str)), memory_capacity(get_len(str)) {
+    sentence(const char *str) : sentence_length(get_len(str)), memory_capacity(get_len(str)) {
         int str_len = get_len(str);
         this->sentence_length = str_len;
         this->sentence_contents = new char[sentence_length];
@@ -31,9 +31,9 @@ public:
 
     ///복사 생성자
     sentence(const sentence &sen) {
-        sentence_length = sen.length();
-        sentence_contents = new char[sentence_length];
-        memory_capacity = sentence_length;
+        this->sentence_length = sen.length();
+        this->sentence_contents = new char[sentence_length];
+        this->memory_capacity = sentence_length;
         for (int i = 0; i < sentence_length; i++) {
             sentence_contents[i] = sen[i];
         }
