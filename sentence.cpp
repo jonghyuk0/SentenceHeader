@@ -189,11 +189,11 @@ sentence sentence::operator+(const sentence &sen1) {
 
 std::ostream &operator<<(std::ostream &OutputStream, const sentence &sen) {
     for(int i = 0; i < sen.length(); i++)
-        std::cout << sen.contents[i];
+        std::cout << sen[i];
     return OutputStream;
 }
 std::ostream &operator<<(std::ostream &OutputStream, const sentence &&sen) {
     for(int i = 0; i < sen.length(); i++)
-        std::cout << sen.contents[i];
+        std::cout << sen[i];
     return OutputStream;
 }
