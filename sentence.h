@@ -1,5 +1,6 @@
 #ifndef JONGHYUK_SENTENCE_H
 #define JONGHYUK_SENTENCE_H
+#include <iostream>
 
 class sentence {
 private:
@@ -63,12 +64,14 @@ public:
     sentence &operator+=(const sentence&);
     sentence &operator+=(const sentence&&);
 
-    friend std::ostream &operator<<(std::ostream&, const sentence&);
-    friend std::ostream &operator<<(std::ostream&, const sentence&&);
-
     sentence operator+(const char);
     sentence operator+(const char*);
     sentence operator+(const sentence&);
+
+    friend std::ostream &operator<<(std::ostream&, const sentence&);
+    friend std::ostream &operator<<(std::ostream&, const sentence&&);
+
+
 };
 
 #endif //JONGHYUK_SENTENCE_H
