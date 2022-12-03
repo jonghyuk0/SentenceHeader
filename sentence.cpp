@@ -68,6 +68,10 @@ void sentence::reserve(const int size, bool remember = true) {
 
 sentence sentence::sub_sen(int begin, int end) {
     if (end == -1) end = this->sen_length;
+    if(begin < 0 || this->sen_length <= end)
+        throw std::out_of_range("Out of Range");
+    if(end < begin)
+        throw std::out_of_range("begin cannot be bigger than end");
     sentence sen;
     for (int i = begin; i < end; i++) {
         sen += this->contents[i];
